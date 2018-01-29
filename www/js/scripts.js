@@ -36,7 +36,7 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
    function getPlayers(){
 
 
-        $.getJSON('http://interactive.nydailynews.com/2016/02/rank-greatest-games-super-bowl-history/php/rankings.php', function(data) {
+        $.getJSON('php/rankings.php', function(data) {
       $.each(data, function(i, item) {
         
          var image = item.IMAGE;
