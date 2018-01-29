@@ -343,6 +343,20 @@
     "TEAM2":" Seattle Seahawks 24",
     "LINK":"http://www.nydailynews.com/sports/football/patriots-super-bowl-champs-28-24-win-seahawks-article-1.2099946",
     "IMAGE":"http://assets.nydailynews.com/polopoly_fs/1.2099942.1422846893!/img/httpImage/image.jpg_gen/derivatives/article_635/462642496.jpg"
-  }
+  },
+  {
+    "GAME":"Super Bowl XL",
+    "TEAM1":" Denver Broncos 24",
+    "TEAM2":" Carolina Panthers 10",
+    "LINK":"http://www.nydailynews.com/sports/football/broncos-panthers-super-bowl-50-article-1.2523494",
+    "IMAGE":"http://assets.nydailynews.com/polopoly_fs/1.2523491.1454897456!/img/httpImage/image.jpg_gen/derivatives/article_1200/508983114.jpg"
+  },
+  {
+    "GAME":"Super Bowl XLI",
+    "TEAM1":" New England Patriots 34",
+    "TEAM2":" Atlanta Falcons 28",
+    "LINK":"http://www.nydailynews.com/sports/football/patriots-shock-falcons-win-super-bowl-li-overtime-34-28-article-1.2965035",
+    "IMAGE":"http://assets.nydailynews.com/polopoly_fs/1.2965034.1486353441!/img/httpImage/image.jpg_gen/derivatives/article_1200/aptopix-patriots-falcons-super-bowl-football.jpg"
+  },
 ]
 }
