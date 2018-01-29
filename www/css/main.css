@@ -1,0 +1,776 @@
+ body{
+   background-color: rgb(30,41,50);
+ }
+ 
+ .divider{
+  border-top: 5px solid #000;
+  width: 60px;
+  position: relative;
+  left: 36%
+}
+ 
+ 
+ .callout{
+   border: none;
+   }
+  #landing-page{
+    background-image: url("../images/superbowl_50_landing_page.jpg");
+    width: 100%;
+    height:1194px;
+     background-repeat: no-repeat;
+    
+  }
+  
+  #main-cont{
+    display: none;
+  }
+  
+  .stuck{position: fixed; top: 0;width: 100%}
+  
+  off-canvas-wrapper-inner{
+    z-index: 2 !important;
+  }
+  .draggable { padding: 0.5em; float: left; margin: 21px 10px 10px 0; border: 3px solid white;}
+  .draggable:hover{
+    border: 3px solid yellow;
+  }
+  .droppable {
+    float: left;
+    margin-bottom: 2px;
+    background-color: rgb(211,215,223);
+    padding: 0;
+    height: 40px;
+    box-sizing: initial;
+    z-index: 245646546546450000;
+  }
+    .droppable-nonvalid { float: left; margin-bottom: 10px; background-color: rgb(211,215,223);padding: 0; height: 67px;box-sizing: initial;z-index: 245646546546450000 }
+
+.off-canvas.position-left {
+  width: 215px;
+}
+
+.off-canvas-content{
+  background-color: rgb(30,41,50);
+}
+
+.off-canvas, .callout{
+  background-color: rgb(31,54,96)
+}
+
+#right-rail{
+  background-color: rgb(30,41,50);
+  margin-left: 20px;
+  height: 5000px;
+}
+
+#left-rail{
+  padding: 0;
+  z-index: 5000;
+}
+
+
+.ranknum{
+  float: left;
+  margin-left: 11px;
+  font-family: "Open Sans Condensed";
+  font-size: 24px;
+  color: #0075ff;
+  width:20px;
+}
+
+.rankX{
+  float: left;
+  margin-left: 11px;
+  font-family: "Open Sans Condensed";
+  font-size: 24px;
+  color: #0075ff;
+  width:20px;
+  display: none;
+  cursor: pointer;
+  
+}
+/*
+.ranked_trash{
+    background-color: yellow;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-family: "Open Sans Condensed";
+    font-size: 22px;
+    color: #0075ff;
+    font-size: 18px;
+}
+*/
+
+
+.card-text{
+  margin-top: 22px;
+  font-family: "Open Sans";
+  font-size: 12px;
+  text-align: center;
+}
+
+.default-text{
+        float: left;
+    text-align: center;
+    width: 161px;
+    height: 28px;
+    border: 2px dashed #999;
+    display: block;
+    font-family: "Open Sans Condensed";
+    font-size: 12px;
+    position: relative;
+    padding-top: 2px;
+    top: -18px;
+    color: #999;
+    left: 18px;
+  
+}
+
+.ranked_name{
+  padding: 5px;
+  padding-left: 85px;
+  font-size: 18px;
+}
+
+.rank{
+    position: absolute;
+    top: 0px;
+    background-color: yellow;
+    text-align: center;
+    width: 71px;
+    left: 69%;
+    font-family: "Open Sans Condensed";
+    font-size: 22px;
+    display: none;
+    padding: 0px 0px 0px 19px;
+    height: 39px;
+  cursor: pointer;
+}
+
+.crank-num{
+  float: left;
+}
+  
+  
+.card{
+  width: 235px;
+  height: 335px;
+  margin-right:3%
+  25px
+  
+}
+
+.crank-on{
+  border: 3px solid yellow;
+}
+  
+@media screen and (max-width: 40em){
+  .position-left.reveal-for-large~.off-canvas-content {
+      margin-left: 265px;
+  }
+  
+.divider{
+  border-top: 0px solid #000;
+  width: 60px;
+  position: relative;
+  left: 36%
+}
+
+.callout{
+  color: white;
+  font-family: "Open Sans";
+  font-weight: bold;
+  line-height: 16px;
+  border: none;
+  font-size: 18px;
+}
+  
+.default-text {
+    float: left;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border: 1px dashed #999;
+    display: block;
+    font-family: "Open Sans Condensed";
+    font-size: 9px;
+    position: relative;
+    padding-top: 2px;
+    top: -39px;
+    color: #999;
+    left: 8px;
+    line-height: 17px;
+}
+
+#my-info{
+  width: 42% !important;
+
+  top: 9% !important;
+}
+
+
+#right-rail{
+  margin-left: -90px;
+}
+
+.thumb {
+    width: 105px;
+    object-fit: cover;
+    height: 70px !important;
+  }
+
+.card {
+    width: 127px;
+    height: 185px;
+    
+}
+
+.title{
+  font-size: 12px;
+}
+
+
+.ranknum{
+  padding: 5px;
+  
+}
+
+.rank{
+  left: 62%;
+}
+
+.droppable{
+height: 62px;
+    width: 43%;
+    margin-right: 9px;
+  
+}
+
+
+
+.card-text{
+  margin-top: 0;
+  font-family: "Open Sans";
+  font-size: 9px;
+  text-align: center
+}
+
+.ranknum{
+  font-size: 16px;
+}
+
+
+.ranked_name{
+        font-size: .8em;
+  padding: 0px;
+  padding-left: 55px;
+}
+
+.rankX{
+  font-size: 12px;
+}
+
+.callout{
+  width: 90%;
+}
+
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {  
+  
+.position-left.reveal-for-large~.off-canvas-content {
+      margin-left: 265px;
+  }
+  
+  .divider{
+  border-top: 0px solid #000;
+  width: 60px;
+  position: relative;
+  left: 36%
+}
+.callout{
+  color: white;
+  font-family: "Open Sans";
+  font-weight: bold;
+  line-height: 16px;
+  border: none;
+  font-size: 18px;
+}
+  
+.default-text {
+    float: left;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border: 1px dashed #999;
+    display: block;
+    font-family: "Open Sans Condensed";
+    font-size: 9px;
+    position: relative;
+    padding-top: 2px;
+    top: -39px;
+    color: #999;
+    left: 8px;
+    line-height: 17px;
+}
+
+#my-info{
+  width: 42% !important;
+
+  top: 9% !important;
+}
+
+
+#right-rail{
+  margin-left: -90px;
+}
+
+.thumb {
+    width: 105px;
+    object-fit: cover;
+    height: 70px !important;
+  }
+
+.card {
+    width: 127px;
+    height: 185px;
+}
+
+.title{
+  font-size: 12px;
+}
+
+
+.ranknum{
+  padding: 5px;
+  
+}
+
+.rank{
+  left: 42%;
+}
+
+.droppable{
+height: 62px;
+    width: 43%;
+    margin-right: 9px;
+  
+}
+
+
+
+.card-text{
+  margin-top: 0;
+  font-family: "Open Sans";
+  font-size: 9px;
+  text-align: center
+}
+
+.ranknum{
+  font-size: 16px;
+}
+
+
+.ranked_name{
+font-size: .46em;
+    padding: 0px;
+    padding-left: 4px;
+    margin-top: -25px;
+    float: left;
+    text-align: center;
+
+  
+
+}
+
+.rankX{
+  font-size: 12px;
+}
+
+.callout{
+  width: 90%;
+}
+
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) 
+and (orientation : portrait) {
+.position-left.reveal-for-large~.off-canvas-content {
+      margin-left: 265px;
+  }
+  
+.divider{
+  border-top: 0px solid #000;
+  width: 60px;
+  position: relative;
+  left: 36%
+}
+  
+.callout{
+  color: white;
+  font-family: "Open Sans";
+  font-weight: bold;
+  line-height: 16px;
+  border: none;
+  font-size: 18px;
+}
+  
+.default-text {
+    float: left;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border: 1px dashed #999;
+    display: block;
+    font-family: "Open Sans Condensed";
+    font-size: 9px;
+    position: relative;
+    padding-top: 2px;
+    top: -39px;
+    color: #999;
+    left: 18px;
+    line-height: 17px;
+}
+
+#my-info{
+  width: 42% !important;
+
+  top: 9% !important;
+}
+
+
+#right-rail{
+  margin-left: -50px;
+}
+
+.thumb {
+    width: 105px;
+    object-fit: cover;
+    height: 70px !important;
+  }
+
+.card {
+    width: 127px;
+    height: 185px;
+}
+
+.title{
+  font-size: 12px;
+}
+
+
+.ranknum{
+  padding: 5px;
+  
+}
+
+.rank{
+  left: 42%;
+}
+
+.droppable{
+height: 62px;
+    width: 43%;
+    margin-right: 9px;
+  
+}
+
+
+
+.card-text{
+  margin-top: 0;
+  font-family: "Open Sans";
+  font-size: 9px;
+  text-align: center
+}
+
+.ranknum{
+  font-size: 16px;
+}
+
+
+.ranked_name{
+  font-size: .56em;
+  padding: 0px;
+  padding-left: 5px;
+/*   margin-top: 11px; */
+  
+
+}
+
+.rankX{
+  font-size: 12px;
+}
+
+.callout{
+  width: 90%;
+}
+
+
+}
+
+
+
+@media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+{ 
+  .position-left.reveal-for-large~.off-canvas-content {
+      margin-left: 265px;
+  }
+  
+  .divider{
+  border-top: 0px solid #000;
+  width: 60px;
+  position: relative;
+  left: 36%
+}
+
+.callout{
+  color: white;
+  font-family: "Open Sans";
+  font-weight: bold;
+  line-height: 16px;
+  border: none;
+  font-size: 18px;
+}
+  
+.default-text {
+float: left;
+    text-align: center;
+    width: 47px;
+    height: 40px;
+    border: 1px dashed #999;
+    display: block;
+    font-family: "Open Sans Condensed";
+    font-size: 9px;
+    position: relative;
+    padding-top: 2px;
+    top: -35px;
+    color: #999;
+    left: 12px;
+    line-height: 17px;
+
+}
+
+#my-info{
+  width: 42% !important;
+
+  top: 9% !important;
+}
+
+
+#right-rail{
+  margin-left: -40px;
+}
+
+.thumb {
+    width: 105px;
+    object-fit: cover;
+    height: 70px !important;
+  }
+
+.card {
+    width: 127px;
+    height: 185px;
+}
+
+.title{
+  font-size: 12px;
+}
+
+
+.ranknum{
+  padding: 5px;
+  
+}
+
+.rank{
+  left: 43%;
+}
+
+.droppable{
+height: 62px;
+    width: 43%;
+    margin-right: 9px;
+  
+}
+
+
+
+.card-text{
+  margin-top: 0;
+  font-family: "Open Sans";
+  font-size: 9px;
+  text-align: center
+}
+
+.ranknum{
+  font-size: 16px;
+}
+
+
+.ranked_name{
+font-size: .46em;
+    padding: 0px;
+    padding-left: 4px;
+    margin-top: -25px;
+    float: left;
+    text-align: center;
+}
+
+.rankX{
+  font-size: 12px;
+}
+
+.callout{
+  width: 90%;
+}
+
+}
+
+
+.off-canvas.position-left {
+  z-index: 30;
+  left: 0;
+  }
+
+#my-info{
+  position: fixed;
+  top:6%;
+  
+}
+
+.droppable .column:last-child, .columns:last-child {
+    float: left;
+}
+
+.opac{
+  opacity: 0.8;
+  z-index: 3000;
+}
+
+.highlight{
+  background-color: yellow;
+}
+
+.thumb{
+  width: 235px;
+  object-fit: cover;
+  height: 150px;
+}
+
+#banner-image{
+  object-fit: cover;
+
+}
+
+.title{
+  text-align: center;
+  font-family: "Open Sans";
+  font-weight: bold;
+  padding-top: 11px;
+  }
+  
+/*
+.title:hover{
+  color: #0075ff;
+}
+*/
+  
+.ui-widget-content a{
+  color: #1585cf;
+}
+
+
+.rankOn{
+  background-color: #fff;
+  color:#0075ff;
+  font-family: "Open Sans Condensed";
+    font-size: 22px;
+
+}
+  #submit{
+    color: #fff;
+    font-family: "Open Sans Condensed";
+    float: right;
+  }
+  
+  #arrow-gif{
+    position: absolute;
+    clear: both;
+    top:56px;
+    float: left
+  }
+  
+  
+  #results-cont{
+    margin-top: 50px;
+    width: 100%;
+    height:1200px;
+    display: none;
+      background-color: rgb(30,41,50);
+      font-family: "Open Sans Condensed";
+      color: #fff;
+      font-size:22px;
+  }
+  
+  #box_ad{
+    text-align: center;
+  }
+  
+  .votes{
+    text-align: center;
+  }
+  
+
+#social{
+  width: 100px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+    float: left;
+}
+
+
+#facebook{
+background-image: url('../images/Share-Sprite.png');
+    background-repeat: no-repeat;
+    background-position: 1px 0px;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 11px;
+    cursor: pointer;
+}
+
+#twitter{
+ background-image: url('../images/Share-Sprite.png');
+    background-repeat: no-repeat;
+    background-position: 0px -46px;
+    width: 46px;
+    height: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+/*
+#facebook:hover{
+  background-position: 1px -34px;
+}
+
+#twitter:hover{
+  background-position: -35px -34px;
+}
+*/
+
