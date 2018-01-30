@@ -11,10 +11,10 @@ function makeid()
 }
 if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   $(".callout").html("THE SUPER BOWL");
-  $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_m.png">')
+  $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page-mobile.jpg">')
 
 }else{
-  $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_dt.png">')
+  $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page.jpg">')
 }
  
   function makeid()
