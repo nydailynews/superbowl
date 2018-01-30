@@ -1,5 +1,5 @@
  body{
-   background-color: rgb(30,41,50);
+   background-color: #272727;
  }
  
  .divider{
@@ -51,7 +51,7 @@
 }
 
 #right-rail{
-  background-color: rgb(30,41,50);
+  background-color: #272727;
   margin-left: 20px;
   height: 5000px;
 }
@@ -668,6 +668,13 @@ font-size: .46em;
   left: 100px;
 }
 
+#landing-text-mobile {
+  font: normal 15px "Open Sans", sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 75vw;
+}
 
 
 #banner-image{
