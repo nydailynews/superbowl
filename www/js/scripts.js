@@ -170,20 +170,20 @@ $(function() {
             $("#main-cont").hide();
             $("#results-cont").show();
             var params = '?';
+            var top_pick;
             for ( var i = 1; i <= 5; i ++ ) {
+                if ( i == 1 ) top_pick = $("#" + i).find(".ranked_name").text().trim();
+                params += 'game' + i + '=' + $("#" + i).find(".ranked_name").text().trim() + '&';
             }
-           var game1 = ($("#1").find(".ranked_name").text().trim())
-           var game2 = ($("#2").find(".ranked_name").text().trim())
-           var game3 = ($("#3").find(".ranked_name").text())
-            $("#top-choice").text("Here's how your favorite Super Bowls are stacking up against your fellow Daily News readers")
-            $("#social").find(".tweet").attr("href", "https://twitter.com/share?url=Nydn.us/RanktheSuperBowls&text=I ranked "+game1+"! Rank ‘em! Pick the Top 10 Super Bowls in NFL history nydn.us/RanktheSuperBowls")
+            params += rando();
 
-           jQuery.get("php/vote.php?game1="+game1+"&game2="+game2+"&game3="+game3+"&"+random, function(data) { 
-             
-                       
-             var myData = jQuery.parseJSON(data);
-             console.log(myData)
-             var totalNum = myData["TOTAL"][0].VTOTAL;
+            $("#top-choice").text("Here's how your favorite Super Bowls stack up against Daily News readers:")
+            $("#social").find(".tweet").attr("href", "https://twitter.com/share?url=Nydn.us/RanktheSuperBowls&text=I ranked "+top_pick+"! Rank ‘em! Pick the Top 10 Super Bowls in NFL history&via=NYDNSports&related=NYDNi,NYDNSports")
+
+            jQuery.get('php/vote.php' + params, function(data) { 
+                var myData = jQuery.parseJSON(data);
+                console.log(myData)
+                var totalNum = myData["TOTAL"][0].VTOTAL;
              
              
              $.each(myData["TOP 3 READERS"], function(i, item) {   
