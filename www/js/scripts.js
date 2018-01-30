@@ -1,5 +1,5 @@
 
-function makeid()
+function rando()
 {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -18,19 +18,7 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
   <img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page.jpg">');
 }
  
-  function makeid()
-{
-    var text = "";
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for( var i=0; i < 5; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
-}
-
- 
- $(function() {
+$(function() {
    
 
    
@@ -178,7 +166,6 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
             if ( $("#1").find(".ranked_name").text().trim() == 'DROP HERE' ) return false;
 
             $("body").animate({ scrollTop: 0 }, "fast");
-            var random = makeid();
          
          $("#main-cont").hide();
          $("#results-cont").show();
