@@ -10,7 +10,7 @@ function makeid()
     return text;
 }
 if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  $(".callout").html("SUPERBOWL TURNS 50");
+  $(".callout").html("THE SUPER BOWL");
   $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_m.png">')
 
 }else{
