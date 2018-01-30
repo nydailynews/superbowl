@@ -671,6 +671,17 @@ font-size: .46em;
   height: 150px;
 }
 
+#landing-text {
+  font: normal 20px "Open Sans", sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 45vw;
+  left: 100px;
+}
+
+
+
 #banner-image{
   object-fit: cover;
 
