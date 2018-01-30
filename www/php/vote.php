@@ -4,51 +4,31 @@
 $game1 = htmlspecialchars($_REQUEST['game1']);
 $game2 = htmlspecialchars($_REQUEST['game2']);
 $game3 = htmlspecialchars($_REQUEST['game3']);
-
-
+$game4 = htmlspecialchars($_REQUEST['game4']);
+$game5 = htmlspecialchars($_REQUEST['game5']);
+$games = array($game1, $game2, $game3, $game4, $game5);
+$votes = array();
 
 require_once ('../../../../includes/php/mysql_connect_production.php');
 
+$vote_up = 2;
+for ( $i = 0; $i < 5; $i ++ ):
+	if ( $games[$i] === 'DROP HERE' ) continue;
+	if ( $i > 2 ) $vote_up = 1;
+	$query = "SELECT VOTE FROM superbowl_ranker WHERE GAME = '".$games[$i]."' LIMIT 1";
+	$result = @mysql_query($query);
+	$row = mysql_fetch_array($result, MYSQL_ASSOC);
+	$vote = intval($row['VOTE']) + $vote_up;
+	array_push($votes, $vote);
 
-$query = "SELECT * FROM superbowl_ranker WHERE GAME = '".$game1."'";
-$result = @mysql_query($query);
-while ($row = mysql_fetch_array($result, MYSQL_ASSOC)){
-  $newVote1 = $row['VOTE'] + 1;
-
-}
-
-$query = "SELECT * FROM superbowl_ranker WHERE GAME = '".$game2."'";
-$result = @mysql_query($query);
-while ($row = mysql_fetch_array($result, MYSQL_ASSOC)){
-  $newVote2 = $row['VOTE'] + 1;
-
-}
-
-$query = "SELECT * FROM superbowl_ranker WHERE GAME = '".$game3."'";
-$result = @mysql_query($query);
-while ($row = mysql_fetch_array($result, MYSQL_ASSOC)){
-  $newVote3 = $row['VOTE'] + 1;
-
-}
-
-  $update1 = "UPDATE Interactive.superbowl_ranker SET VOTE=".$newVote1." WHERE GAME = '".$game1."'";
-  $result = @mysql_query($update1);
-  
-  $update2 = "UPDATE Interactive.superbowl_ranker SET VOTE=".$newVote2." WHERE GAME = '".$game2."'";
-  $result = @mysql_query($update2);
-  
-  $update3 = "UPDATE Interactive.superbowl_ranker SET VOTE=".$newVote3." WHERE GAME = '".$game3."'";
-  $result = @mysql_query($update3);
-
-
+	$update = "UPDATE superbowl_ranker SET VOTE=".$vote." WHERE GAME = '".$games[$i]."' LIMIT 1";
+	$result = @mysql_query($update1);
+endfor;
 
 $sql = mysql_query("SELECT * FROM superbowl_ranker ORDER BY VOTE DESC LIMIT 3");
 
-
-
 $results = array();
-while($row = mysql_fetch_array($sql))
-{
+while($row = mysql_fetch_array($sql)):
    $results["TOP 3 READERS"][]  = array(
       'GAME' => $row['GAME'],
       'TEAM1' => $row['TEAM1'],
@@ -57,25 +37,18 @@ while($row = mysql_fetch_array($sql))
       'IMAGE' => $row['IMAGE'],
       'VOTE' => $row['VOTE']
    );
-}
+endwhile;
 
 $sql = mysql_query("SELECT sum(vote) as 'vt' FROM superbowl_ranker");
-while($row = mysql_fetch_array($sql))
-{
+while($row = mysql_fetch_array($sql)):
    $results["TOTAL"][]  = array(
-
       'VTOTAL' => $row['vt']
-
    );
-}
+endwhile;
 
+$sql = mysql_query("SELECT * FROM superbowl_ranker WHERE GAME = '".$games[2]."' OR GAME = '".$games[1]."' OR GAME  = '".$games[0]."'");
 
-$sql = mysql_query("SELECT * FROM superbowl_ranker WHERE GAME = '".$game3."' OR GAME = '".$game2."' OR GAME  = '".$game1."'");
-
-
-
-while($row = mysql_fetch_array($sql))
-{
+while($row = mysql_fetch_array($sql)):
    $results["TOP 3"][]  = array(
       'GAME' => $row['GAME'],
       'TEAM1' => $row['TEAM1'],
@@ -84,11 +57,10 @@ while($row = mysql_fetch_array($sql))
       'IMAGE' => $row['IMAGE'],
       'VOTE' => $row['VOTE']
    );
-}
+endwhile;
 
 $json = json_encode($results);
 echo $json;
 
 mysql_close($connection);
-
 ?>
