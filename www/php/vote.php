@@ -10,39 +10,39 @@ $game3 = htmlspecialchars($_REQUEST['game3']);
 require_once ('../../../../includes/php/mysql_connect_production.php');
 
 
-$query = "SELECT * FROM superbowl_rank_2016 WHERE GAME = '".$game1."'";
+$query = "SELECT * FROM superbowl_ranker WHERE GAME = '".$game1."'";
 $result = @mysql_query($query);
 while ($row = mysql_fetch_array($result, MYSQL_ASSOC)){
   $newVote1 = $row['VOTE'] + 1;
 
 }
 
-$query = "SELECT * FROM superbowl_rank_2016 WHERE GAME = '".$game2."'";
+$query = "SELECT * FROM superbowl_ranker WHERE GAME = '".$game2."'";
 $result = @mysql_query($query);
 while ($row = mysql_fetch_array($result, MYSQL_ASSOC)){
   $newVote2 = $row['VOTE'] + 1;
 
 }
 
-$query = "SELECT * FROM superbowl_rank_2016 WHERE GAME = '".$game3."'";
+$query = "SELECT * FROM superbowl_ranker WHERE GAME = '".$game3."'";
 $result = @mysql_query($query);
 while ($row = mysql_fetch_array($result, MYSQL_ASSOC)){
   $newVote3 = $row['VOTE'] + 1;
 
 }
 
-  $update1 = "UPDATE Interactive.superbowl_rank_2016 SET VOTE=".$newVote1." WHERE GAME = '".$game1."'";
+  $update1 = "UPDATE Interactive.superbowl_ranker SET VOTE=".$newVote1." WHERE GAME = '".$game1."'";
   $result = @mysql_query($update1);
   
-  $update2 = "UPDATE Interactive.superbowl_rank_2016 SET VOTE=".$newVote2." WHERE GAME = '".$game2."'";
+  $update2 = "UPDATE Interactive.superbowl_ranker SET VOTE=".$newVote2." WHERE GAME = '".$game2."'";
   $result = @mysql_query($update2);
   
-  $update3 = "UPDATE Interactive.superbowl_rank_2016 SET VOTE=".$newVote3." WHERE GAME = '".$game3."'";
+  $update3 = "UPDATE Interactive.superbowl_ranker SET VOTE=".$newVote3." WHERE GAME = '".$game3."'";
   $result = @mysql_query($update3);
 
 
 
-$sql = mysql_query("SELECT * FROM superbowl_rank_2016 ORDER BY VOTE DESC LIMIT 3");
+$sql = mysql_query("SELECT * FROM superbowl_ranker ORDER BY VOTE DESC LIMIT 3");
 
 
 
@@ -59,7 +59,7 @@ while($row = mysql_fetch_array($sql))
    );
 }
 
-$sql = mysql_query("SELECT sum(vote) as 'vt' FROM superbowl_rank_2016");
+$sql = mysql_query("SELECT sum(vote) as 'vt' FROM superbowl_ranker");
 while($row = mysql_fetch_array($sql))
 {
    $results["TOTAL"][]  = array(
@@ -70,7 +70,7 @@ while($row = mysql_fetch_array($sql))
 }
 
 
-$sql = mysql_query("SELECT * FROM superbowl_rank_2016 WHERE GAME = '".$game3."' OR GAME = '".$game2."' OR GAME  = '".$game1."'");
+$sql = mysql_query("SELECT * FROM superbowl_ranker WHERE GAME = '".$game3."' OR GAME = '".$game2."' OR GAME  = '".$game1."'");
 
 
 
