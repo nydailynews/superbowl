@@ -15,20 +15,19 @@ $vote_up = 2;
 for ( $i = 0; $i < 5; $i ++ ):
 	if ( $games[$i] === 'DROP HERE' ) continue;
 	if ( $i > 2 ) $vote_up = 1;
-	$query = "SELECT VOTE FROM superbowl_ranker WHERE GAME = '".$games[$i]."' LIMIT 1";
-	$result = @mysql_query($query);
-	$row = mysql_fetch_array($result, MYSQL_ASSOC);
-	$vote = intval($row['VOTE']) + $vote_up;
+	$query = "SELECT VOTE FROM ranker_superbowl WHERE GAME = '".$games[$i]."' LIMIT 1";
+	$result = mysql_query($query)  or die($query."\n".mysql_error());
+	while ( $row = mysql_fetch_array($result, MYSQL_ASSOC) ) $vote = intval($row['VOTE']) + $vote_up;
 	array_push($votes, $vote);
 
-	$update = "UPDATE superbowl_ranker SET VOTE=".$vote." WHERE GAME = '".$games[$i]."' LIMIT 1";
-	$result = @mysql_query($update1);
+	$update = "UPDATE ranker_superbowl SET VOTE=".$vote." WHERE GAME = '".$games[$i]."' LIMIT 1";
+	$result = @mysql_query($update);
 endfor;
 
-$sql = mysql_query("SELECT * FROM superbowl_ranker ORDER BY VOTE DESC LIMIT 3");
+$sql = mysql_query("SELECT * FROM ranker_superbowl ORDER BY VOTE DESC LIMIT 3");
 
 $results = array();
-while($row = mysql_fetch_array($sql)):
+while($row = mysql_fetch_array($sql, MYSQL_ASSOC)):
    $results["TOP 3 READERS"][]  = array(
       'GAME' => $row['GAME'],
       'TEAM1' => $row['TEAM1'],
@@ -39,14 +38,14 @@ while($row = mysql_fetch_array($sql)):
    );
 endwhile;
 
-$sql = mysql_query("SELECT sum(vote) as 'vt' FROM superbowl_ranker");
-while($row = mysql_fetch_array($sql)):
-   $results["TOTAL"][]  = array(
+$sql = mysql_query("SELECT sum(vote) as 'vt' FROM ranker_superbowl");
+while($row = mysql_fetch_array($sql, MYSQL_ASSOC)):
+   $results["TOTAL"][] = array(
       'VTOTAL' => $row['vt']
    );
 endwhile;
 
-$sql = mysql_query("SELECT * FROM superbowl_ranker WHERE GAME = '".$games[2]."' OR GAME = '".$games[1]."' OR GAME  = '".$games[0]."'");
+$sql = mysql_query("SELECT * FROM ranker_superbowl WHERE GAME = '".$games[2]."' OR GAME = '".$games[1]."' OR GAME  = '".$games[0]."'");
 
 while($row = mysql_fetch_array($sql)):
    $results["TOP 3"][]  = array(

@@ -176,9 +176,10 @@ $(function() {
                 params += 'game' + i + '=' + $("#" + i).find(".ranked_name").text().trim() + '&';
             }
             params += rando();
+            console.log(params);
 
             $("#top-choice").text("Here's how your favorite Super Bowls stack up against Daily News readers:")
-            $("#social").find(".tweet").attr("href", "https://twitter.com/share?url=Nydn.us/RanktheSuperBowls&text=I ranked "+top_pick+"! Rank ‘em! Pick the Top 10 Super Bowls in NFL history&via=NYDNSports&related=NYDNi,NYDNSports")
+            $("#social").find(".tweet").attr("href", "https://twitter.com/share?url=http://nydn.us/superbowlsuperbowl&text=I ranked "+top_pick+" the best Super Bowl. You can rank your top Super Bowls in NFL history&via=NYDNSports&related=NYDNi,NYDNSports")
 
             jQuery.get('php/vote.php' + params, function(data) { 
                 var myData = jQuery.parseJSON(data);
