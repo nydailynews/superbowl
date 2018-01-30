@@ -1,5 +1,5 @@
  
-  function makeid()
+function makeid()
 {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -11,10 +11,10 @@
 }
 if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   $(".callout").html("SUPERBOWL TURNS 50");
-  $("#banner").html('<img id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_m.png">')
+  $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_m.png">')
 
 }else{
-  $("#banner").html('<img id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_dt.png">')
+  $("#banner").html('<img alt="" id="banner-image" style="width: 100%" src="images/superbowl_50_landing_page_dt.png">')
 }
  
   function makeid()
@@ -62,7 +62,20 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
         
         
       if(item.GAME != "AD"){
-        $("#right-rail").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column"><img class="thumb" src="'+image+'" /><div class="rank"><p class="crank-num"></p><img style="floar:left" src="images/trash_can.png" /></div><div class="title">'+item.GAME+'</div><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'<br /><p class="link-text"><a href="'+item.LINK+'" target="new" >Read article</a></p></div></div>');
+        $("#right-rail").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
+                <img alt="Photo of " class="thumb" src="'+image+'" />\n\
+                <div class="rank">\n\
+                    <p class="crank-num"></p>\n\
+                    <img alt="" style="float:left" src="images/trash_can.png" />\n\
+                </div>\n\
+                <div class="title">'+item.GAME+'</div>\n\
+                <div class="divider"></div>\n\
+                <div class="card-text">\n\
+                    '+item.TEAM1+"<br />"+item.TEAM2+'<br />\n\
+                    <p class="link-text">\n\
+                        <a href="'+item.LINK+'" target="_blank">Read article</a>\n\
+                    </p>\n\
+                </div></div>');
         }else{
           if( !/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
             $('#right-rail').append('<div id="box_ad" class="large-4 medium-6 small-12 columns" style="float:left"><hr><div id="div-gpt-ad-1423507761396-1"><script type="text/javascript">googletag.cmd.push(function(){ googletag.display("div-gpt-ad-1423507761396-1"); });</script></div><hr></div><br clear="all">')   
