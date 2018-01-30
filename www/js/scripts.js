@@ -173,9 +173,12 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
            
            
  
-       $("#submit").on('click', function(){  
-         $("body").animate({ scrollTop: 0 }, "fast");
-         var random = makeid();
+        // SUBMIT FORM HHANDLER
+        $("#submit").on('click', function(){  
+            if ( $("#1").find(".ranked_name").text().trim() == 'DROP HERE' ) return false;
+
+            $("body").animate({ scrollTop: 0 }, "fast");
+            var random = makeid();
          
          $("#main-cont").hide();
          $("#results-cont").show();
