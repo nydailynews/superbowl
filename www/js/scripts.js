@@ -63,7 +63,7 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
         
       if(item.GAME != "AD"){
         $("#right-rail").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
-                <img alt="Photo of " class="thumb" src="'+image+'" />\n\
+                <img alt="Photo from '+item.GAME+'" class="thumb" src="'+image+'" />\n\
                 <div class="rank">\n\
                     <p class="crank-num"></p>\n\
                     <img alt="" style="float:left" src="images/trash_can.png" />\n\
@@ -73,12 +73,12 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
                 <div class="card-text">\n\
                     '+item.TEAM1+"<br />"+item.TEAM2+'<br />\n\
                     <p class="link-text">\n\
-                        <a href="'+item.LINK+'" target="_blank">Read article</a>\n\
+                        <a href="'+item.LINK+'" target="_blank">Read '+item.GAME+' game article</a>\n\
                     </p>\n\
                 </div></div>');
         }else{
           if( !/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-            $('#right-rail').append('<div id="box_ad" class="large-4 medium-6 small-12 columns" style="float:left"><hr><div id="div-gpt-ad-1423507761396-1"><script type="text/javascript">googletag.cmd.push(function(){ googletag.display("div-gpt-ad-1423507761396-1"); });</script></div><hr></div><br clear="all">')   
+            $('#right-rail').append('<div id="box_ad" class="large-4 medium-6 small-12 columns" style="float:left"><hr><div id="div-gpt-ad-1423507761396-1"><script>googletag.cmd.push(function(){ googletag.display("div-gpt-ad-1423507761396-1"); });</script></div><hr></div><br clear="all">')   
           }      
         }
         
@@ -94,10 +94,6 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
           drag: function(event, ui){
             $(this).addClass("opac");            
           }
-          
-          
-          
-          
           });
    
       $( ".droppable" ).droppable({
@@ -196,12 +192,16 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
              
              $.each(myData["TOP 3 READERS"], function(i, item) {   
                 percent_v = Math.round((item.VOTE/(totalNum))*100);
-             $("#top3-readers").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column"><img class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p><img style="floar:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
+             $("#top3-readers").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
+                     <img alt="" class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p>\n\
+                     <img alt="" style="float:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
              })
              
              $.each(myData["TOP 3"], function(i, item) {   
                percent_v = Math.round((item.VOTE/(totalNum))*100);
-             $("#your-top3").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column"><img class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p><img style="floar:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
+             $("#your-top3").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
+                     <img alt="" class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p>\n\
+                     <img alt="" style="float:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
              })     
           })
         })
