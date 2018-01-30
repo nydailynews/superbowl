@@ -104,7 +104,6 @@
 }
 
 .default-text{
-        float: left;
     text-align: center;
     width: 161px;
     height: 28px;
@@ -112,17 +111,13 @@
     display: block;
     font-family: "Open Sans Condensed";
     font-size: 12px;
-    position: relative;
     padding-top: 2px;
-    top: -18px;
     color: #999;
-    left: 18px;
-  
 }
 
 .ranked_name{
   padding: 5px;
-  padding-left: 85px;
+  padding-left: 38px;
   font-size: 18px;
 }
 
