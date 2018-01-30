@@ -37,8 +37,11 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
    function getPlayers(){
 
 
-        $.getJSON('php/rankings.php', function(data) {
-      $.each(data, function(i, item) {
+        $.getJSON('js/rankings.json', function(data) {
+            console.log(data);
+           var len = data['rankings'].length;
+           for ( var i = 0; i < len; i ++ ) {
+               var item = data['rankings'][i];
         
          var image = item.IMAGE;
         if (item.GAME == "Super Bowl XIV"){
@@ -85,7 +88,7 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
         }
         
         
-        })
+        } // end for loop
 // <svg height="10" width="100"><line x1="50" y1="0" x2="0" y2="0" style="stroke:rgb(255,0,0);stroke-width:2" /></svg>    
       $( ".draggable" ).draggable({ 
           revert: function( event, ui ) {
