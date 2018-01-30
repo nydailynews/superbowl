@@ -167,10 +167,13 @@ $(function() {
 
             $("body").animate({ scrollTop: 0 }, "fast");
          
-         $("#main-cont").hide();
-         $("#results-cont").show();
-           var game1 = ($("#1").find(".ranked_name").text())
-           var game2 = ($("#2").find(".ranked_name").text())
+            $("#main-cont").hide();
+            $("#results-cont").show();
+            var params = '?';
+            for ( var i = 1; i <= 5; i ++ ) {
+            }
+           var game1 = ($("#1").find(".ranked_name").text().trim())
+           var game2 = ($("#2").find(".ranked_name").text().trim())
            var game3 = ($("#3").find(".ranked_name").text())
             $("#top-choice").text("Here's how your favorite Super Bowls are stacking up against your fellow Daily News readers")
             $("#social").find(".tweet").attr("href", "https://twitter.com/share?url=Nydn.us/RanktheSuperBowls&text=I ranked "+game1+"! Rank ‘em! Pick the Top 10 Super Bowls in NFL history nydn.us/RanktheSuperBowls")
