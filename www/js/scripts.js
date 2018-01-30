@@ -78,7 +78,7 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
                     '+item.TEAM1+"<br />"+item.TEAM2+'\n\
                 </p>\n\
                 <p class="link-text">\n\
-                    <a href="'+item.LINK+'" target="_blank">Read '+item.GAME+' game article</a>\n\
+                    <a href="'+item.LINK+'" target="_blank">Read the '+item.GAME+' article</a>\n\
                 </p>\n\
                 </div></div>');
         }else{

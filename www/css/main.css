@@ -29,7 +29,7 @@
   }
   .droppable {
     float: left;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
     background-color: rgb(211,215,223);
     padding: 0;
     height: 40px;
@@ -105,7 +105,7 @@
 
 .default-text{
     text-align: center;
-    width: 161px;
+    width: 95%;
     height: 28px;
     border: 2px dashed #999;
     display: block;
@@ -175,19 +175,13 @@
 }
   
 .default-text {
-    float: left;
     text-align: center;
-    width: 40px;
-    height: 40px;
     border: 1px dashed #999;
     display: block;
     font-family: "Open Sans Condensed";
     font-size: 9px;
-    position: relative;
     padding-top: 2px;
-    top: -39px;
     color: #999;
-    left: 8px;
     line-height: 17px;
 }
 
@@ -229,8 +223,7 @@
 }
 
 .droppable{
-height: 62px;
-    width: 43%;
+    width: 90%;
     margin-right: 9px;
   
 }
@@ -250,9 +243,7 @@ height: 62px;
 
 
 .ranked_name{
-        font-size: .8em;
-  padding: 0px;
-  padding-left: 55px;
+    font-size: .8em;
 }
 
 .rankX{
@@ -290,19 +281,13 @@ and (orientation : portrait) {
 }
   
 .default-text {
-    float: left;
     text-align: center;
-    width: 40px;
-    height: 40px;
     border: 1px dashed #999;
     display: block;
     font-family: "Open Sans Condensed";
     font-size: 9px;
-    position: relative;
     padding-top: 2px;
-    top: -39px;
     color: #999;
-    left: 8px;
     line-height: 17px;
 }
 
@@ -343,8 +328,7 @@ and (orientation : portrait) {
 }
 
 .droppable{
-height: 62px;
-    width: 43%;
+    width: 90%;
     margin-right: 9px;
   
 }
@@ -364,15 +348,8 @@ height: 62px;
 
 
 .ranked_name{
-font-size: .46em;
-    padding: 0px;
-    padding-left: 4px;
-    margin-top: -25px;
-    float: left;
+    font-size: .46em;
     text-align: center;
-
-  
-
 }
 
 .rankX{
@@ -410,19 +387,13 @@ and (orientation : portrait) {
 }
   
 .default-text {
-    float: left;
     text-align: center;
-    width: 40px;
-    height: 40px;
     border: 1px dashed #999;
     display: block;
     font-family: "Open Sans Condensed";
     font-size: 9px;
-    position: relative;
     padding-top: 2px;
-    top: -39px;
     color: #999;
-    left: 18px;
     line-height: 17px;
 }
 
@@ -444,7 +415,7 @@ and (orientation : portrait) {
   }
 
 .card {
-    width: 127px;
+    width: 134px;
     height: 185px;
 }
 
@@ -463,8 +434,7 @@ and (orientation : portrait) {
 }
 
 .droppable{
-    height: 62px;
-    width: 43%;
+    width: 90%;
     margin-right: 9px;
   
 }
@@ -485,11 +455,6 @@ and (orientation : portrait) {
 
 .ranked_name{
   font-size: .56em;
-  padding: 0px;
-  padding-left: 5px;
-/*   margin-top: 11px; */
-  
-
 }
 
 .rankX{
@@ -585,12 +550,11 @@ float: left;
 }
 
 .rank{
-  left: 43%;
+  left: 90%;
 }
 
 .droppable{
-height: 62px;
-    width: 43%;
+    width: 90%;
     margin-right: 9px;
   
 }
@@ -710,7 +674,8 @@ font-size: .46em;
   #submit{
     color: #fff;
     font-family: "Open Sans Condensed";
-    float: right;
+    width: 100%;
+    margin-top: 50px;
   }
   
   #arrow-gif{
@@ -784,6 +749,7 @@ p.link-text {
     h3.title {
         font-size: 14px;
         letter-spacing: -1px;
+        line-height: 14px;
     }
     p.link-text {
         text-align: center;
