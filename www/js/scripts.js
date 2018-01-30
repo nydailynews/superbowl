@@ -68,13 +68,14 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
                     <p class="crank-num"></p>\n\
                     <img alt="" style="float:left" src="images/trash_can.png" />\n\
                 </div>\n\
-                <div class="title">'+item.GAME+'</div>\n\
+                <h3 class="title">'+item.GAME+'</h3>\n\
                 <div class="divider"></div>\n\
-                <div class="card-text">\n\
-                    '+item.TEAM1+"<br />"+item.TEAM2+'<br />\n\
-                    <p class="link-text">\n\
-                        <a href="'+item.LINK+'" target="_blank">Read '+item.GAME+' game article</a>\n\
-                    </p>\n\
+                <p class="card-text">\n\
+                    '+item.TEAM1+"<br />"+item.TEAM2+'\n\
+                </p>\n\
+                <p class="link-text">\n\
+                    <a href="'+item.LINK+'" target="_blank">Read '+item.GAME+' game article</a>\n\
+                </p>\n\
                 </div></div>');
         }else{
           if( !/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -180,14 +181,12 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
             $("#top-choice").text("Here's how your favorite Super Bowls are stacking up against your fellow Daily News readers")
             $("#social").find(".tweet").attr("href", "https://twitter.com/share?url=Nydn.us/RanktheSuperBowls&text=I ranked "+game1+"! Rank ‘em! Pick the Top 10 Super Bowls in NFL history nydn.us/RanktheSuperBowls")
 
-           jQuery.get("http://interactive.nydailynews.com/2016/02/rank-greatest-games-super-bowl-history/php/vote.php?game1="+game1+"&game2="+game2+"&game3="+game3+"&"+random, function(data) { 
+           jQuery.get("php/vote.php?game1="+game1+"&game2="+game2+"&game3="+game3+"&"+random, function(data) { 
              
                        
-             
              var myData = jQuery.parseJSON(data);
              console.log(myData)
              var totalNum = myData["TOTAL"][0].VTOTAL;
-            
              
              
              $.each(myData["TOP 3 READERS"], function(i, item) {   
@@ -210,10 +209,5 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
    }
    
    getPlayers();
-     
-     
-     
-     
 
   });
-  
