@@ -9,12 +9,13 @@ function rando()
 
     return text;
 }
+
 if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   $(".callout").html("THE SUPER BOWL");
-  $("#banner").html('<p id="landing-text-mobile">Tap anywhere to start ranking</p>\
+  $("#banner").html($("#banner").html() + '<p id="landing-text-mobile">Tap anywhere to start ranking</p>\
     <img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page-mobile.jpg">');
 }else{
-  $("#banner").html('<p id="landing-text">Click anywhere to start ranking</p>\
+  $("#banner").html($("#banner").html() + '<p id="landing-text">Click anywhere to start ranking</p>\
   <img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page.jpg">');
 }
  

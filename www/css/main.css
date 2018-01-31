@@ -646,7 +646,6 @@ font-size: .46em;
 
 #banner-image{
   object-fit: cover;
-
 }
 
 .title{
@@ -760,4 +759,8 @@ p.link-text {
         line-height: 13px;
     }
 
+}
+.center {
+    margin: auto;
+    text-align: center;
 }
