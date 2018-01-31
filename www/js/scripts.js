@@ -154,7 +154,7 @@ $(function() {
   
     });
  
-        // SUBMIT FORM HHANDLER
+        // SUBMIT FORM HANDLER
         $("#submit").on('click', function(){  
             if ( $("#1").find(".ranked_name").text().trim() == 'DROP HERE' ) return false;
             if ( typeof PARSELY !== 'undefined' ) PARSELY.beacon.trackPageView({ url: document.location.href, urlref: document.location.href, js: 1 });
@@ -197,10 +197,7 @@ $(function() {
              })     
           })
         })
-   
-   
    }
    
    getPlayers();
-
   });
