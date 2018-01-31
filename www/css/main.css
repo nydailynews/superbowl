@@ -47,7 +47,11 @@
 }
 
 .off-canvas, .callout{
-  background-color: rgb(31,54,96)
+  background-color: rgb(31,54,96);
+  color: white;
+  font: bold 40px'Open Sans', sans-serif;
+  line-height: 40px;
+  text-align: center;
 }
 
 #right-rail{
@@ -275,9 +279,10 @@ and (orientation : portrait) {
   color: white;
   font-family: "Open Sans";
   font-weight: bold;
-  line-height: 16px;
+  line-height: 26px;
   border: none;
-  font-size: 18px;
+  font-size: 25px;
+  margin: 0;
 }
   
 .default-text {
@@ -299,7 +304,7 @@ and (orientation : portrait) {
 
 
 #right-rail{
-  margin-left: -90px;
+  margin-left: -110px;
 }
 
 .thumb {
@@ -328,7 +333,7 @@ and (orientation : portrait) {
 }
 
 .droppable{
-    width: 90%;
+    width: 100%;
     margin-right: 9px;
   
 }
@@ -357,7 +362,7 @@ and (orientation : portrait) {
 }
 
 .callout{
-  width: 90%;
+  width: 100%;
 }
 
 }
@@ -381,9 +386,9 @@ and (orientation : portrait) {
   color: white;
   font-family: "Open Sans";
   font-weight: bold;
-  line-height: 16px;
+  line-height: 35px;
   border: none;
-  font-size: 18px;
+  font-size: 35px;
 }
   
 .default-text {
@@ -405,7 +410,7 @@ and (orientation : portrait) {
 
 
 #right-rail{
-  margin-left: -50px;
+  margin-left: -70px;
 }
 
 .thumb {
@@ -434,7 +439,7 @@ and (orientation : portrait) {
 }
 
 .droppable{
-    width: 90%;
+    width: 100%;
     margin-right: 9px;
   
 }
@@ -462,7 +467,7 @@ and (orientation : portrait) {
 }
 
 .callout{
-  width: 90%;
+  width: 100%;
 }
 
 
@@ -494,25 +499,23 @@ and (orientation : portrait) {
   color: white;
   font-family: "Open Sans";
   font-weight: bold;
-  line-height: 16px;
   border: none;
-  font-size: 18px;
+  font-size: 35px;
 }
   
 .default-text {
 float: left;
     text-align: center;
-    width: 47px;
-    height: 40px;
+    width: 125px;
+    height: 25px;
     border: 1px dashed #999;
     display: block;
     font-family: "Open Sans Condensed";
     font-size: 9px;
     position: relative;
     padding-top: 2px;
-    top: -35px;
+    top: 33px;
     color: #999;
-    left: 12px;
     line-height: 17px;
 
 }
@@ -525,7 +528,7 @@ float: left;
 
 
 #right-rail{
-  margin-left: -40px;
+  margin-left: -50px;
 }
 
 .thumb {
@@ -554,7 +557,7 @@ float: left;
 }
 
 .droppable{
-    width: 90%;
+    width: 100%;
     margin-right: 9px;
   
 }
@@ -587,7 +590,7 @@ font-size: .46em;
 }
 
 .callout{
-  width: 90%;
+  width: 100%;
 }
 
 }
