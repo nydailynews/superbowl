@@ -18,12 +18,15 @@ if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.us
   <img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page.jpg">');
 }
  
+$("#banner").on('click', function(){
+    $(this).hide();
+    $("#main-cont").fadeIn();
+    if ( typeof PARSELY !== 'undefined' ) PARSELY.beacon.trackPageView({ url: document.location.href, urlref: document.location.href, js: 1 });
+});
+
 $(function() {
    
-
-   
    function getPlayers(){
-
 
         $.getJSON('js/rankings.json', function(data) {
             console.log(data);
@@ -58,7 +61,7 @@ $(function() {
                 <img alt="Photo from '+item.GAME+'" class="thumb" src="'+image+'" />\n\
                 <div class="rank">\n\
                     <p class="crank-num"></p>\n\
-                    <img alt="" style="float:left" src="images/trash_can.png" />\n\
+                    <img alt="" src="images/trash_can.png" />\n\
                 </div>\n\
                 <h3 class="title">'+item.GAME+'</h3>\n\
                 <div class="divider"></div>\n\
@@ -148,22 +151,13 @@ $(function() {
         $(this).parent().removeClass( "rankOn" );
        })
   
-    })
-      
-     
-         
-      $("#banner").on('click', function(){
-        
-        $(this).hide();
-        $("#main-cont").fadeIn();
-        
-      })
-           
-           
+    });
  
         // SUBMIT FORM HHANDLER
         $("#submit").on('click', function(){  
             if ( $("#1").find(".ranked_name").text().trim() == 'DROP HERE' ) return false;
+            if ( typeof PARSELY !== 'undefined' ) PARSELY.beacon.trackPageView({ url: document.location.href, urlref: document.location.href, js: 1 });
+
 
             $("body").animate({ scrollTop: 0 }, "fast");
          
@@ -191,14 +185,14 @@ $(function() {
                 percent_v = Math.round((item.VOTE/(totalNum))*100);
              $("#top3-readers").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
                      <img alt="" class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p>\n\
-                     <img alt="" style="float:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
+                     <img alt="" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
              })
              
              $.each(myData["TOP 3"], function(i, item) {   
                percent_v = Math.round((item.VOTE/(totalNum))*100);
              $("#your-top3").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
                      <img alt="" class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p>\n\
-                     <img alt="" style="float:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
+                     <img alt="" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
              })     
           })
         })
