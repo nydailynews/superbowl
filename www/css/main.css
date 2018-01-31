@@ -765,3 +765,4 @@ p.link-text {
     text-align: center;
 }
 h1 > span { display: none; }
+.clear { clear: both; }
