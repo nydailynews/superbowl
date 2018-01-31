@@ -164,6 +164,7 @@ $(function() {
          
             $("#main-cont").hide();
             $("#results-cont").show();
+            window.scrollTo(0,0);
             var params = '?';
             var top_pick;
             for ( var i = 1; i <= 5; i ++ ) {
