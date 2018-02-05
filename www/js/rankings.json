@@ -357,6 +357,13 @@
     "TEAM2":" Atlanta Falcons 28",
     "LINK":"http://www.nydailynews.com/sports/football/patriots-shock-falcons-win-super-bowl-li-overtime-34-28-article-1.2965035",
     "IMAGE":"http://assets.nydailynews.com/polopoly_fs/1.2965034.1486353441!/img/httpImage/image.jpg_gen/derivatives/article_400/aptopix-patriots-falcons-super-bowl-football.jpg"
+  },
+  {
+    "GAME":"Super Bowl LII",
+    "TEAM1":" Philadelphia Eagles 41",
+    "TEAM2":" New England Patriots 33",
+    "LINK":"http://www.nydailynews.com/sports/football/nick-foles-eagles-defeat-patriots-super-bowl-41-33-article-1.3799289",
+    "IMAGE":"http://assets.nydailynews.com/polopoly_fs/1.3800083.1517839208!/img/httpImage/image.jpg_gen/derivatives/article_400/775087610mr00511-super-bowl.jpg"
   }
 ]
 }
