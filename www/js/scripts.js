@@ -9,21 +9,25 @@ function rando()
 
     return text;
 }
+
 if(/Android|webOS|iPhone|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   $(".callout").html("THE SUPER BOWL");
-  $("#banner").html('<p id="landing-text-mobile">Tap anywhere to start ranking</p>\
+  $("#banner").html($("#banner").html() + '<p id="landing-text-mobile">Tap anywhere to start ranking</p>\
     <img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page-mobile.jpg">');
 }else{
-  $("#banner").html('<p id="landing-text">Click anywhere to start ranking</p>\
+  $("#banner").html($("#banner").html() + '<p id="landing-text">Click anywhere to start ranking</p>\
   <img alt="" id="banner-image" style="width: 100%" src="images/superbowl-landing-page.jpg">');
 }
  
+$("#banner").on('click', function(){
+    $(this).hide();
+    $("#main-cont").fadeIn();
+    if ( typeof PARSELY !== 'undefined' ) PARSELY.beacon.trackPageView({ url: document.location.href, urlref: document.location.href, js: 1 });
+});
+
 $(function() {
    
-
-   
    function getPlayers(){
-
 
         $.getJSON('js/rankings.json', function(data) {
             console.log(data);
@@ -58,7 +62,7 @@ $(function() {
                 <img alt="Photo from '+item.GAME+'" class="thumb" src="'+image+'" />\n\
                 <div class="rank">\n\
                     <p class="crank-num"></p>\n\
-                    <img alt="" style="float:left" src="images/trash_can.png" />\n\
+                    <img alt="" src="images/trash_can.png" />\n\
                 </div>\n\
                 <h3 class="title">'+item.GAME+'</h3>\n\
                 <div class="divider"></div>\n\
@@ -148,27 +152,19 @@ $(function() {
         $(this).parent().removeClass( "rankOn" );
        })
   
-    })
-      
-     
-         
-      $("#banner").on('click', function(){
-        
-        $(this).hide();
-        $("#main-cont").fadeIn();
-        
-      })
-           
-           
+    });
  
-        // SUBMIT FORM HHANDLER
+        // SUBMIT FORM HANDLER
         $("#submit").on('click', function(){  
             if ( $("#1").find(".ranked_name").text().trim() == 'DROP HERE' ) return false;
+            if ( typeof PARSELY !== 'undefined' ) PARSELY.beacon.trackPageView({ url: document.location.href, urlref: document.location.href, js: 1 });
+
 
             $("body").animate({ scrollTop: 0 }, "fast");
          
             $("#main-cont").hide();
             $("#results-cont").show();
+            window.scrollTo(0,0);
             var params = '?';
             var top_pick;
             for ( var i = 1; i <= 5; i ++ ) {
@@ -191,21 +187,18 @@ $(function() {
                 percent_v = Math.round((item.VOTE/(totalNum))*100);
              $("#top3-readers").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
                      <img alt="" class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p>\n\
-                     <img alt="" style="float:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
+                     <img alt="" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
              })
              
              $.each(myData["TOP 3"], function(i, item) {   
                percent_v = Math.round((item.VOTE/(totalNum))*100);
              $("#your-top3").append('<div game="'+item.GAME+'" class="card noRank draggable ui-widget-content column">\n\
                      <img alt="" class="thumb" src="'+item.IMAGE+'" /><div class="rank"><p class="crank-num"></p>\n\
-                     <img alt="" style="float:left" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
+                     <img alt="" src="images/trash_can.png" /></div><a href="'+item.LINK+'" target="new" ><div class="title">'+item.GAME+'</div></a><div class="divider"></div><div class="card-text">'+item.TEAM1+"<br />"+item.TEAM2+'</div><div class="votes">'+percent_v+'% votes</div></div>');
              })     
           })
         })
-   
-   
    }
    
    getPlayers();
-
   });
