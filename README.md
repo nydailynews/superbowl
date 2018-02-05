@@ -58,11 +58,11 @@ Great. Now you get to do the same thing again, but with the database.
 
 #### Next, add a record to the database
 
-You're going to put together a database query that you run on our database server. Great. In [sql/new-record.sql]() is the boilerplate. It looks something like:
+You're going to put together a database query that you run on our database server. Great. In [sql/new-record.sql](sql/new-record.sql) is the boilerplate. It looks something like:
 
 ```sql
 #INSERT INTO ranker_superbowl VALUES ("Super Bowl 50", " Denver Broncos 24", " Carolina Panthers 10", "http://www.nydailynews.com/sports/football/broncos-panthers-super-bowl-50-article-1.2523494", "http://assets.nydailynews.com/polopoly_fs/1.2523491.1454897456!/img/httpImage/image.jpg_gen/derivatives/article_400/508983114.jpg", 0)
-INSERT INTO ranker_superbowl VALUES ("", " ", " ", "", "", 0)
+INSERT INTO ranker_superbowl VALUES ("", " ", " ", "", "", 0);
 ```
 
 So what you do: Open your favorite text editor, copy the `INSERT INTO ranker_superbowl VALUES ("", " ", " ", "", "", 0)` part, and in the first quoted argument paste the name of the Super Bowl, in the second paste whatever you put into TEAM1 in the JSON above
