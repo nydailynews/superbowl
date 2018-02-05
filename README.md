@@ -19,7 +19,7 @@ Rank the best Super Bowls
 Hi. Glad you're here. This is where you'll learn how to update the interactive with the results of the previous Super Bowl, which will allow readers to pick that Super Bowl in this interactive (assuming it was any good).
 
 #### First, update the Super Bowl json
-In [www/js/rankings.json]() is a json file with records of each Super Bowl. You're going to edit this file and add a new record at the end. Go to this file and scroll to the bottom, the final record should look something like:
+In [www/js/rankings.json](www/js/rankings.json) is a json file with records of each Super Bowl. You're going to edit this file and add a new record at the end. Go to this file and scroll to the bottom, the final record should look something like:
 ```json
   {
     "GAME":"Super Bowl XLIXXX",
